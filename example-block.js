@@ -5,19 +5,29 @@ export default class ExampleBlock extends HTMLElement {
 	}
 
 	connectedCallback() {
+		// const name = this.getAttribute("name") || "Exemple";
+
+		this.style.display = "block";
+		this.style.margin = "1rem 0";
+		// this.style.padding = "1rem";
+		// this.style.backgroundColor = "whitesmoke";
+
+		const style = this.querySelector("style");
+		style.remove();
+
 		// const details = document.createElement("details");
 		// details.innerHTML = this.innerHTML;
 
 		// const summary = document.createElement("summary");
-		// summary.textContent = "Exemple";
+		// summary.textContent = name;
+		// summary.style.cursor = "pointer";
 		// details.prepend(summary);
 
-		// this.shadowRoot.append(details);
-
-		this.style.display = "block";
-		this.style.margin = "1rem 0";
+		// const adjacentToSummary = details.querySelector("summary + *");
+		// adjacentToSummary.style.marginTop = "1rem";
 
 		this.shadowRoot.innerHTML = this.innerHTML;
+		this.shadowRoot.prepend(style);
 	}
 }
 
