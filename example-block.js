@@ -14,6 +14,8 @@ export default class ExampleBlock extends HTMLElement {
 
 		// this.shadowRoot.append(details);
 
+		this.style.display = "block";
+
 		this.shadowRoot.innerHTML = this.innerHTML;
 	}
 }
