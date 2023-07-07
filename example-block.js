@@ -13,10 +13,7 @@ export default class ExampleBlock extends HTMLElement {
 		// this.style.backgroundColor = "whitesmoke";
 
 		const style = this.querySelector("style");
-		if (style) {
-			style.remove();
-			this.shadowRoot.prepend(style);
-		}
+		if (style) style.remove();
 
 		// const details = document.createElement("details");
 		// details.innerHTML = this.innerHTML;
@@ -30,6 +27,7 @@ export default class ExampleBlock extends HTMLElement {
 		// adjacentToSummary.style.marginTop = "1rem";
 
 		this.shadowRoot.innerHTML = this.innerHTML;
+		if (style) this.shadowRoot.prepend(style);
 	}
 }
 
