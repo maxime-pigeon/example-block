@@ -8,24 +8,34 @@ export default class ExampleBlock extends HTMLElement {
 		const name = this.getAttribute("name") || "Exemple";
 
 		this.style.display = "block";
-		this.style.margin = "1rem 0";
+		this.style.position = "relative";
+		this.style.margin = "4rem";
+		this.style.padding = "2.5rem 1rem 1rem 1rem";
+		this.style.border = "1px dotted black";
+		this.style.resize = "horizontal";
+		this.style.overflow = "hidden";
 
 		const style = this.querySelector("style");
 		if (style) style.remove();
 
-		const details = document.createElement("details");
-		details.innerHTML = this.innerHTML;
+		const figure = document.createElement("figure");
+		figure.innerHTML = this.innerHTML;
+		figure.style.margin = "0";
 
-		const summary = document.createElement("summary");
-		summary.textContent = name;
-		summary.style.cursor = "pointer";
-		details.prepend(summary);
-
-		const adjacentToSummary = details.querySelector("summary + *");
-		adjacentToSummary.style.marginTop = "1rem";
+		const figcaption = document.createElement("figcaption");
+		figcaption.style.position = "absolute";
+		figcaption.style.fontFamily ="Verdana";
+		figcaption.style.fontSize = "0.5rem";
+		figcaption.style.top = "1rem";
+		figcaption.style.background = "white";
+		figcaption.style.textTransform = "uppercase";
+		figcaption.style.lineHeight = "1";
+		figcaption.style.letterSpacing = "0.15rem";
+		figcaption.textContent = "Exemple " + name;
+		figure.prepend(figcaption);
 
 		if (style) this.shadowRoot.append(style);
-		this.shadowRoot.append(details);
+		this.shadowRoot.append(figure);
 	}
 }
 
