@@ -12,8 +12,8 @@ export default class ExampleBlock extends HTMLElement {
 		this.style.margin = "4rem";
 		this.style.padding = "2.5rem 1rem 1rem 1rem";
 		this.style.border = "1px dotted black";
-		this.style.resize = "horizontal";
-		this.style.overflow = "hidden";
+		this.style.resize = "both";
+		this.style.overflow = "scroll";
 
 		const style = this.querySelector("style");
 		if (style) style.remove();
