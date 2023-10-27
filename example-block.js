@@ -8,9 +8,8 @@ export default class ExampleBlock extends HTMLElement {
 		const name = this.getAttribute("name") || "Exemple";
 
 		this.style.display = "block";
-		this.style.position = "relative";
 		this.style.margin = "4rem";
-		this.style.padding = "2.5rem 1rem 1rem 1rem";
+		this.style.padding = "0 1rem 1rem 1rem";
 		this.style.border = "1px dotted black";
 		this.style.resize = "both";
 		this.style.overflow = "scroll";
@@ -23,14 +22,12 @@ export default class ExampleBlock extends HTMLElement {
 		figure.style.margin = "0";
 
 		const figcaption = document.createElement("figcaption");
-		figcaption.style.position = "absolute";
 		figcaption.style.fontFamily ="Verdana";
 		figcaption.style.fontSize = "0.5rem";
-		figcaption.style.top = "1rem";
 		figcaption.style.background = "white";
 		figcaption.style.textTransform = "uppercase";
-		figcaption.style.lineHeight = "1";
 		figcaption.style.letterSpacing = "0.15rem";
+		figcaption.style.margin = "1rem 0";
 		figcaption.textContent = "Exemple " + name;
 		figure.prepend(figcaption);
 
